@@ -51,18 +51,26 @@ Este projeto foi desenvolvido com o objetivo de:
 
 ```text
 banco-api-tests-t3/
+├── fixtures/
+│   ├── postLogin.json
+│   └── postTransferencias.json
 ├── helpers/
 │   └── autenticacao.js
 ├── test/
 │   ├── login.test.js
 │   ├── contas.test.js
 │   └── transferencias.test.js
-├── mochawesome-report/
-├── package.json
+├── .gitignore
 ├── README.md
+├── package-lock.json
+└── package.json
 
 ```
 ## Descrição dos Diretórios
+
+### `fixtures/`
+
+Arquivos contendo massas de dados utilizadas nos testes automatizados.
 
 ### `helpers/`
 
@@ -71,10 +79,6 @@ Funções auxiliares utilizadas pelos testes, como geração de token de autenti
 ### `test/`
 
 Arquivos contendo os cenários de teste automatizados.
-
-### `mochawesome-report/`
-
-Diretório onde são gerados os relatórios HTML após a execução dos testes.
 
 ---
 
