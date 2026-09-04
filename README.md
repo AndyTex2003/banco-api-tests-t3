@@ -1,261 +1,260 @@
 # Banco API Tests – Automação de Testes de API REST
 
-Projeto de **automação de testes para API REST** desenvolvido em **JavaScript** utilizando **Node.js**.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=white)
+![Chai](https://img.shields.io/badge/Chai-A30701?style=flat-square&logo=chai&logoColor=white)
+![Supertest](https://img.shields.io/badge/Supertest-4B5563?style=flat-square)
+![API REST](https://img.shields.io/badge/API-REST-0A7EA4?style=flat-square)
 
-Os testes automatizados validam os endpoints da API do projeto:
+Projeto de **automação de testes para API REST** desenvolvido em **JavaScript**, utilizando **Mocha**, **Chai** e **Supertest**.
 
-https://github.com/juliodelimas/banco-api
+Os testes automatizados validam os endpoints da **Banco API**, utilizada como sistema sob teste.
 
-Repositório deste projeto de testes:
+- API testada: [github.com/juliodelimas/banco-api](https://github.com/juliodelimas/banco-api)
+- Repositório dos testes: [github.com/AndyTex2003/banco-api-tests-t3](https://github.com/AndyTex2003/banco-api-tests-t3)
 
-https://github.com/AndyTex2003/banco-api-tests-t3
-
-O objetivo é demonstrar a implementação de **testes automatizados para APIs REST**, utilizando boas práticas de organização, reutilização de código e geração de relatórios.
+O objetivo é demonstrar a implementação de **testes automatizados para APIs REST**, aplicando boas práticas de organização, reutilização de código e geração de relatórios.
 
 ---
 
-# Objetivo do Projeto
+## Objetivo do Projeto
 
 Este projeto foi desenvolvido com o objetivo de:
 
-- Automatizar testes de endpoints de uma API REST
-- Validar respostas HTTP
-- Validar estrutura e conteúdo das respostas JSON
-- Demonstrar organização de testes em Node.js
-- Gerar relatórios de execução automatizados
-- Servir como exemplo de automação de testes de API
+- Automatizar testes de endpoints de uma **API REST**
+- Validar **respostas HTTP**
+- Validar a **estrutura e o conteúdo das respostas JSON**
+- Aplicar uma estrutura organizada para testes automatizados em **Node.js**
+- Gerar **relatórios de execução automatizados**
+- Demonstrar, na prática, uma abordagem estruturada de **automação de testes de API**
 
 ---
 
-# Stack Utilizada
+## Stack Utilizada
 
-Tecnologias e bibliotecas utilizadas:
+### Tecnologias
 
-- Node.js
-- JavaScript
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-Bibliotecas de teste:
+### Bibliotecas de Teste
 
-- **Mocha** → Framework de testes
-- **Chai** → Biblioteca de asserções
-- **Supertest** → Requisições HTTP para testes de API
-- **Dotenv** → Gerenciamento de variáveis de ambiente
-- **Mochawesome** → Geração de relatórios HTML
+![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=white)
+![Chai](https://img.shields.io/badge/Chai-A30701?style=flat-square&logo=chai&logoColor=white)
+![Supertest](https://img.shields.io/badge/Supertest-4B5563?style=flat-square)
+![Dotenv](https://img.shields.io/badge/Dotenv-ECD53F?style=flat-square&logo=dotenv&logoColor=black)
+![Mochawesome](https://img.shields.io/badge/Mochawesome-2DA44E?style=flat-square)
 
 
-
-# Estrutura de Diretórios
 
 ## Estrutura de Diretórios
 
-```
-banco-api-tests-t3
-├── helpers
+```text
+banco-api-tests-t3/
+├── helpers/
 │   └── autenticacao.js
-├── test
+├── test/
 │   ├── login.test.js
 │   ├── contas.test.js
 │   └── transferencias.test.js
-├── mochawesome-report
+├── mochawesome-report/
 ├── package.json
 ├── README.md
-└── .env
-```
-## Descrição
 
-**helpers/**  
+```
+## Descrição dos Diretórios
+
+### `helpers/`
+
 Funções auxiliares utilizadas pelos testes, como geração de token de autenticação.
 
-**test/**  
-Arquivos contendo os cenários de testes automatizados.
+### `test/`
 
-**mochawesome-report/**  
-Diretório onde são gerados os relatórios HTML após execução dos testes.
+Arquivos contendo os cenários de teste automatizados.
+
+### `mochawesome-report/`
+
+Diretório onde são gerados os relatórios HTML após a execução dos testes.
 
 ---
 
-# Configuração do Ambiente
+## Configuração do Ambiente
 
 Antes de executar os testes, é necessário criar um arquivo `.env` na raiz do projeto.
 
 Este arquivo **não está versionado no repositório**.
 
-## Exemplo de `.env`
+### Exemplo de `.env`
 
-
+```env
 BASE_URL=http://localhost:3000
+```
 
-
-### Descrição
-
-**BASE_URL**
+### BASE_URL
 
 Define a URL base da API que será testada.
 
-Isso permite executar os testes contra diferentes ambientes:
+Isso permite executar os testes contra diferentes ambientes, como:
 
 - Local
 - Homologação
 - Produção
-
 ---
 
-# Executando a API antes dos testes
+## Executando a API antes dos testes
 
 Este projeto testa a API disponível no repositório:
 
-https://github.com/juliodelimas/banco-api
+[github.com/juliodelimas/banco-api](https://github.com/juliodelimas/banco-api)
 
 Antes de executar os testes, é necessário iniciar a API.
 
-## 1. Clone a API
+### 1. Clone a API
 
-
+```bash
 git clone https://github.com/juliodelimas/banco-api.git
+```
 
+### 2. Acesse o diretório
 
-## 2. Acesse o diretório
-
-
+```bash
 cd banco-api
+```
 
+### 3. Instale as dependências
 
-## 3. Instale as dependências
-
-
+```bash
 npm install
+```
 
+### 4. Inicie o servidor
 
-## 4. Inicie o servidor
-
-
+```bash
 npm start
-
+```
 
 A API ficará disponível em:
 
-
+```text
 http://localhost:3000
-
+```
 
 ---
 
-# Instalação do Projeto de Testes
+## Instalação do Projeto de Testes
 
-Clone o repositório:
+### Clone o repositório
 
-
+```bash
 git clone https://github.com/AndyTex2003/banco-api-tests-t3.git
+```
 
+### Acesse o diretório
 
-Entre no diretório:
-
-
+```bash
 cd banco-api-tests-t3
+```
 
+### Instale as dependências
 
-Instale as dependências:
-
-
+```bash
 npm install
-
+```
 
 ---
 
-# Execução dos Testes
+## Execução dos Testes
 
 Para executar os testes automatizados:
 
-
+```bash
 npm test
-
+```
 
 ou
 
-
+```bash
 npx mocha
+```
 
 
 ---
 
-# Geração de Relatórios
+## Geração de Relatórios
 
 Este projeto utiliza **Mochawesome** para geração de relatórios em HTML.
 
 Após a execução dos testes, o relatório será gerado no diretório:
 
+`mochawesome-report/`
 
-mochawesome-report
+### Visualizar o relatório
 
-
-Para visualizar:
-
-1. Acesse a pasta
+1. Acesse a pasta `mochawesome-report/`
 2. Abra o arquivo `.html` no navegador
+
+### Informações apresentadas
 
 O relatório apresenta:
 
-- testes executados
-- testes aprovados
-- testes falhados
-- tempo de execução
-- detalhes das falhas
+- Testes executados
+- Testes aprovados
+- Testes com falha
+- Tempo de execução
+- Detalhes das falhas
 
 ---
 
-# Fluxo de Execução do Projeto
+## Fluxo de Execução do Projeto
 
-```
+```text
 API Banco (banco-api)
 │
-│ Requisições HTTP
+├── Requisições HTTP
+│
 ▼
 Testes Automatizados
 (Mocha + Supertest + Chai)
 │
-│ Execução dos cenários
+├── Execução dos cenários
+│
 ▼
 Validações
 (Status HTTP + JSON)
 │
-│ Geração de evidências
+├── Geração de evidências
+│
 ▼
 Relatório HTML
 (Mochawesome)
 
 ```
 
-# Boas Práticas Utilizadas
+## Boas Práticas Aplicadas
 
 - Separação de **helpers reutilizáveis**
-- Organização de testes por **endpoint**
+- Organização dos testes por **endpoint**
 - Utilização de **variáveis de ambiente**
 - Uso de bibliotecas específicas para **testes de API**
-- Geração automática de **relatórios de execução**
+- Geração automatizada de **relatórios de execução**
 
 ---
 
-# Documentação das Dependências
+## Documentação das Dependências
 
-Mocha  
-https://mochajs.org/
-
-Chai  
-https://www.chaijs.com/
-
-Supertest  
-https://github.com/ladjs/supertest
-
-Mochawesome  
-https://github.com/adamgruber/mochawesome
-
-Dotenv  
-https://github.com/motdotla/dotenv
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/)
+- [Supertest](https://github.com/ladjs/supertest)
+- [Mochawesome](https://github.com/adamgruber/mochawesome)
+- [Dotenv](https://github.com/motdotla/dotenv)
 
 ---
 
-# Autor
+## Autor
 
 **Anderson Batista dos Santos**
 
-Projeto desenvolvido como prática de **Automação de Testes de API REST**.
+QA | Testes de Software | Qualidade de Software
+
+- LinkedIn: [linkedin.com/in/anderson-santos-qa](https://www.linkedin.com/in/anderson-santos-qa/)
+- GitHub: [github.com/AndyTex2003](https://github.com/AndyTex2003)
