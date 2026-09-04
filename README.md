@@ -131,10 +131,10 @@ cd banco-api
 npm install
 ```
 
-### 4. Inicie o servidor
+### 4. Inicie a API REST
 
 ```bash
-npm start
+npm run rest-api
 ```
 
 A API ficará disponível em:
